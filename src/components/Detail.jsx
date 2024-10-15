@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-export default function Detail() {
+export default function Detail(productId) {
+  let navigate = useNavigate()
   const[num,setNum] = useState(0)
   useEffect(()=>{
     console.log(num);
@@ -11,7 +13,7 @@ export default function Detail() {
       <div className="row">
         <div className="col-md-6">
           <img
-            src="https://codingapple1.github.io/shop/shoes1.jpg"
+            src={`https://codingapple1.github.io/shop/shoes${productId}.jpg`}
             width="100%"
           />
         </div>

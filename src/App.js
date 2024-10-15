@@ -1,6 +1,5 @@
 import logo from './logo.svg';
 import './App.css';
-import {Button} from "react-bootstrap"
 import Card from './components/Card';
 import Navbar from './components/Navbar';
 import Counter from './components/Counter';
@@ -24,8 +23,6 @@ function App() {
 
   return (
     <div className="App">
-      
-
       <header>
         <Navbar/>
       </header>
