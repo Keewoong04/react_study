@@ -9,9 +9,13 @@ import HomePage from './pages/HomePage';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import dummyProducts from './pages/HomePage';
+import React from 'react';
+import { Nav } from "react-bootstrap";
+import TabContents from "./components/TabContents";
+
 function App() {
   //axios.get("URL 주소")
-
+  const [탭, 탭변경] = useState();
   const [prodocts, setProducts] = useState([]);
   useEffect(()=>{
     axios
@@ -25,6 +29,39 @@ function App() {
     <div className="App">
       <header>
         <Navbar/>
+        <Nav variant="tabs" defaultActiveKey="link0">
+            <Nav.Item>
+              <Nav.Link
+                onClick={() => {
+                  탭변경(0);
+                }}
+                eventKey="link0"
+              >
+                버튼0
+              </Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link
+                onClick={() => {
+                  탭변경(1);
+                }}
+                eventKey="link1"
+              >
+                버튼1
+              </Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link
+                onClick={() => {
+                  탭변경(2);
+                }}
+                eventKey="link2"
+              >
+                버튼2
+              </Nav.Link>
+            </Nav.Item>
+          </Nav>
+          <TabContents 탭={탭} />
       </header>
 
       <Routes>

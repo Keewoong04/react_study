@@ -16,5 +16,4 @@ export default function HomePage(){
     <body>
         {products.map((product) => (<Card productId={product.id} title = {product.title} content={product.content} price={product.price}/>))}
     </body>)
-
 }
